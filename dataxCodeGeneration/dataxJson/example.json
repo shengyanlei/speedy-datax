@@ -1,0 +1,60 @@
+{
+    "job": {
+        "content": [
+            {
+                "reader": {
+                    "name": "mysqlreader",
+                    "parameter": {
+                        "column": ["*"],
+                        "splitPK":"id",
+                        "connection": [
+                            {
+                                "jdbcUrl": [
+                                "jdbc:mysql://localhost:3306/gmall"
+                                ],
+                                "table": [
+                                "activity_info"
+                                ]
+                            }
+                        ],
+                        "password": "1234kxmall!@#ABC",
+                        "username": "root"
+                    }
+                },
+                "writer": {
+                    "name": "hdfswriter",
+                    "parameter": {
+                        "column": [
+                        {"name":"id",
+                        "type":"INT"},
+                        {"name":"activity_name",
+                        "type":"String"},
+                        {"name":"activity_type",
+                        "type":"String"},
+                        {"name":"activity_desc",
+                        "type":"String"},
+                        {"name":"start_time",
+                        "type":"date"},
+                        {"name":"end_time",
+                        "type":"date"},
+                        {"name":"create_time",
+                        "type":"date"}
+                        ],
+                        "defaultFS": "hdfs://nodev2001:8020",
+                        "fieldDelimiter": "\t",
+                        "fileName": "test",
+                        "fileType": "orc",
+                        "path": "/input",
+                        "writeMode": "append"
+                    }
+                }
+            }
+        ],
+        "setting": {
+            "speed": {
+                "channel": "1"
+            }
+        }
+    }
+}
+

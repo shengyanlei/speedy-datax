@@ -1,0 +1,79 @@
+{
+    "job": {
+        "content": [
+            {
+                "reader": {
+                    "name": "mysqlreader",
+                    "parameter": {
+                        "column": [
+                            "*"
+                        ],
+                        "splitPK": "id",
+                        "connection": [
+                            {
+                                "jdbcUrl": [
+                                    "jdbc:mysql://localhost:3306/gmall"
+                                ],
+                                "table": [
+                                    "activity_rule"
+                                ]
+                            }
+                        ],
+                        "password": "1234kxmall!@#ABC",
+                        "username": "root"
+                    }
+                },
+                "writer": {
+                    "name": "hdfswriter",
+                    "parameter": {
+                        "column": [
+                            {
+                                "name": "id",
+                                "type": "int"
+                            },
+                            {
+                                "name": "activity_id",
+                                "type": "int"
+                            },
+                            {
+                                "name": "activity_type",
+                                "type": "string"
+                            },
+                            {
+                                "name": "condition_amount",
+                                "type": "string"
+                            },
+                            {
+                                "name": "condition_num",
+                                "type": "bigint"
+                            },
+                            {
+                                "name": "benefit_amount",
+                                "type": "string"
+                            },
+                            {
+                                "name": "benefit_discount",
+                                "type": "string"
+                            },
+                            {
+                                "name": "benefit_level",
+                                "type": "bigint"
+                            }
+                        ],
+                        "defaultFS": "hdfs://nodev2001:8020",
+                        "fieldDelimiter": "\t",
+                        "fileName": "dt=2023-08-12",
+                        "fileType": "orc",
+                        "path": "/origin_data/gmall/app_db/activity_rule_full",
+                        "writeMode": "append"
+                    }
+                }
+            }
+        ],
+        "setting": {
+            "speed": {
+                "channel": "1"
+            }
+        }
+    }
+}

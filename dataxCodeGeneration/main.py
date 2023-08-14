@@ -12,7 +12,7 @@ def datax_json(table_name,type):
             hdfs_column.append({"name": table_info[1][i], "type": "string"})
 
     #读取示例json文件
-    with open("venv/dataxJson/example.json", "r") as file:
+    with open("dataxJson/example.json", "r") as file:
         json_data = file.read()
 
     data = json.loads(json_data)
@@ -36,7 +36,7 @@ def datax_json(table_name,type):
     data["job"]["content"][0]["writer"]["parameter"]["path"] = path
 
     # 输出到文件
-    output_file = f"venv/dataxjob/{table_name}.json".format(table_name=table_name)
+    output_file = f"dataxjob/{table_name}.json".format(table_name=table_name)
     with open(output_file, "w") as file:
         json.dump(data, file, indent=4)
 
