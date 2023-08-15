@@ -18,9 +18,9 @@ def datax_json(table_name,type):
     data = json.loads(json_data)
     # hdfs
     if(type=="full"):
-        path ="/origin_data/gmall/app_db/{table_name}_full/dt={date}".format(table_name=table_name,date=datetime.now().strftime("%Y-%m-%d"))
+        path ="/user/hive/warehouse/shyl_ods.db/{table_name}_full/dt={date}".format(table_name=table_name,date=datetime.now().strftime("%Y-%m-%d"))
     elif(type=="inc"):
-        path = "/origin_data/gmall/app_db/{table_name}_inc/dt={date}".format(table_name=table_name,date=datetime.now().strftime("%Y-%m-%d"))
+        path = "/user/hive/warehouse/shyl_ods.db/{table_name}_inc/dt={date}".format(table_name=table_name,date=datetime.now().strftime("%Y-%m-%d"))
     else:
         raise ValueError("Invalid value for 'type'. Expected 'full' or 'inc', got: {}".format(type))
     # hive

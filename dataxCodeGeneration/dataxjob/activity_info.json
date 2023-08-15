@@ -60,7 +60,7 @@
                         "fieldDelimiter": "\t",
                         "fileName": "test",
                         "fileType": "orc",
-                        "path": "/origin_data/gmall/app_db/activity_info_full/dt=2023-08-14",
+                        "path": "/user/hive/warehouse/shyl_ods.db/activity_info_full/dt=2023-08-14",
                         "writeMode": "append"
                     }
                 }

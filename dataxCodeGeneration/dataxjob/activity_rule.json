@@ -62,9 +62,9 @@
                         ],
                         "defaultFS": "hdfs://nodev2001:8020",
                         "fieldDelimiter": "\t",
-                        "fileName": "dt=2023-08-12",
+                        "fileName": "test",
                         "fileType": "orc",
-                        "path": "/origin_data/gmall/app_db/activity_rule_full",
+                        "path": "/user/hive/warehouse/shyl_ods.db/activity_rule_full/dt=2023-08-14",
                         "writeMode": "append"
                     }
                 }
