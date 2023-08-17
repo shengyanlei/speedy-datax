@@ -1,4 +1,4 @@
-from dataxJson.jsonGeneration import mysql_table_info
+from dataxJson.tableColumn import mysql_table_info
 import json
 from datetime import datetime
 #自动生成datax-json
@@ -36,7 +36,7 @@ def datax_json(table_name,type):
     data["job"]["content"][0]["writer"]["parameter"]["path"] = path
 
     # 输出到文件
-    output_file = f"dataxjob/{table_name}.json".format(table_name=table_name)
+    output_file = f"dataxjob/{table_name}_{type}.json".format(table_name=table_name,type=type)
     with open(output_file, "w") as file:
         json.dump(data, file, indent=4)
 
@@ -48,7 +48,10 @@ def datax_json(table_name,type):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    datax_json("activity_info","full")
+    table_full=["activity_info","activity_rule","base_category1","base_category2","base_category3","base_dic","base_province","base_region"
+        ,"base_trademark","cart_info","coupon_info","coupon_info","sku_attr_value","sku_sale_attr_value","sku_info","spu_info"]
+    for e in table_full:
+        datax_json(e,"full")
 
 
 

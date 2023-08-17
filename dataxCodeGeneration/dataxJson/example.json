@@ -42,7 +42,7 @@
                         ],
                         "defaultFS": "hdfs://nodev2001:8020",
                         "fieldDelimiter": "\t",
-                        "fileName": "test",
+                        "fileName": "db",
                         "fileType": "orc",
                         "path": "/input",
                         "writeMode": "append"
